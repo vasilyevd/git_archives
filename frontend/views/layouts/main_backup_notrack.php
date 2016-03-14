@@ -27,7 +27,7 @@ AppAsset::register($this);
 
 <div class="wrap">
     <?php
-    /*NavBar::begin([
+    NavBar::begin([
         'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
@@ -56,7 +56,7 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
     ]);
-    NavBar::end();*/
+    NavBar::end();
     ?>
 
     <div class="container">
@@ -71,6 +71,7 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>

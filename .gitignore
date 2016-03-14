@@ -11,7 +11,7 @@ nbproject
 .buildpath
 .project
 .settings
-
+*_notrack.php
 # windows thumbnail cache
 Thumbs.db
 

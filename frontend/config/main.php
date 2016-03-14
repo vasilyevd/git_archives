@@ -37,5 +37,10 @@ return [
         ],
 
     ],
+    'modules' => [
+        'history' => [
+            'class' => 'frontend\modules\history\History',
+        ],
+    ],
     'params' => $params,
 ];
