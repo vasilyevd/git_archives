@@ -61,7 +61,7 @@ class CommitMessage implements ILoadData
      */
     public function getCommitTime()
     {
-        return $this->commitTime;
+        return (int)$this->commitTime;
     }
 
     /**

@@ -62,6 +62,5 @@ class Log extends Controller
             }
         }
         echo 'Done' . PHP_EOL;
-        /*echo $command->execute()->getBufferAsString() . PHP_EOL;*/
     }
 }

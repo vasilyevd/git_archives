@@ -15,15 +15,15 @@ return [
             'class' => \console\controllers\git\Log::className()
         ],
     ],
-        'components' => [
-    'log' => [
-        'targets' => [
-            [
-                'class' => 'yii\log\FileTarget',
-                'levels' => ['error', 'warning'],
+    'components' => [
+        'log' => [
+            'targets' => [
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'levels' => ['error', 'warning'],
+                ],
             ],
         ],
     ],
-],
-        'params' => $params,
-    ];
+    'params' => $params,
+];

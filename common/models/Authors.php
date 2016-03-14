@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\BlameableBehavior;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "authors".
@@ -17,6 +19,18 @@ use Yii;
  */
 class Authors extends \yii\db\ActiveRecord
 {
+
+    /**
+     * @return array
+     */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+            BlameableBehavior::className(),
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -53,6 +67,7 @@ class Authors extends \yii\db\ActiveRecord
         ];
     }
 
+
     /**
      * @inheritdoc
      * @return AuthorsQuery the active query used by this AR class.
@@ -60,5 +75,35 @@ class Authors extends \yii\db\ActiveRecord
     public static function find()
     {
         return new AuthorsQuery(get_called_class());
+    }
+
+
+    /**
+     * Return name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+
+    /**
+     * Return email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+
+    /**
+     * Return pk of authors table
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

@@ -14,8 +14,8 @@ namespace common\interfaces\git;
  */
 interface ILoadData
 {
-    CONST HASH = 'commit-subject';
-    CONST SUBJECT = 'commit-hash';
+    CONST HASH = 'commit-hash';
+    CONST SUBJECT = 'commit-subject';
     CONST AUTHOR = 'commit-author';
     CONST AUTHOR_EMAIL = 'commit-author-email';
     CONST AUTHOR_DATE = 'commit-author-date';
