@@ -66,4 +66,12 @@ class Commits extends \yii\db\ActiveRecord
     {
         return new CommitsQuery(get_called_class());
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getAuthor()
+    {
+        return $this->hasOne(Authors::className(), ['id' => 'author_id']);
+    }
 }

@@ -5,7 +5,7 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "authors_table".
+ * This is the model class for table "authors".
  *
  * @property integer $id
  * @property string $name
@@ -15,7 +15,7 @@ use Yii;
  * @property integer $created_by
  * @property integer $updated_by
  */
-class AuthorsTable extends \yii\db\ActiveRecord
+class Authors extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

@@ -8,9 +8,10 @@
  */
 namespace console\controllers\git;
 
+use common\components\git\CommitMessage;
+use common\components\git\Loader;
 use console\components\GitCommand;
 use yii\console\Controller;
-use yii\helpers\Console;
 
 /**
  * Class Log
@@ -52,13 +53,15 @@ class Log extends Controller
                     null);
             })
             ->addOption('log')
-            ->addOption('--pretty=format:"
-                <commit-hash>%H</commit-hash>
-                <commit-author>%an</commit-author>
-                <commit-author-email>%ae</commit-author-email>
-                <commit-author-date>%ad</commit-author-date>
-                <commit-subject>%s</commit-subject>"')
+            ->addOption('--pretty=format:"<commit-hash>%H</commit-hash><commit-author>%an</commit-author><commit-author-email>%ae</commit-author-email><commit-author-date>%ad</commit-author-date><commit-subject>%s</commit-subject>"')
             ->addOption('--date=raw');
-        echo $command->execute()->getBufferAsString() . PHP_EOL;
+        $result = $command->execute();
+        foreach ($result->getBuffer() as $record) {
+            if (!is_null($record)) {
+                Loader::processToModel(new CommitMessage($record));
+            }
+        }
+        echo 'Done' . PHP_EOL;
+        /*echo $command->execute()->getBufferAsString() . PHP_EOL;*/
     }
 }
